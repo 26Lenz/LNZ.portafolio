@@ -136,6 +136,10 @@ body{
     animation:appear 0.7s ease both;
 }
 
+.item:hover {
+    transform: scale(1.1);
+}
+
 /* ANIMACIÓN SIMPLE */
 @keyframes appear{
     from{
