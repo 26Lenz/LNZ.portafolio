@@ -4,7 +4,8 @@
     padding:0;
 }
 
-html, body{
+html,
+body{
     height:100%;
 }
 
@@ -12,7 +13,7 @@ body{
     background-color:#40434e;
     color:#E3E4DB;
     font-family:Arial, sans-serif;
-    overflow:hidden; /* evita scroll en toda la página */
+    overflow:hidden;
 }
 
 /* GRID GENERAL DE LA PÁGINA */
@@ -25,9 +26,9 @@ body{
 
 /* HEADER */
 .studio{
-    font-family: "Old English Text MT", "UnifrakturMaguntia", Georgia, serif;
-    background-color: #2d2f3c;
-    padding:1.2rem 2rem 0.8rem 2rem;
+    font-family:"Old English Text MT", "UnifrakturMaguntia", Georgia, serif;
+    background-color:#2d2f3c;
+    padding:1.2rem 2rem 0.8rem;
     color:#E3E4DB;
     z-index:2;
 }
@@ -49,7 +50,6 @@ body{
     width:min(100%, 1440px);
     height:100%;
     margin:0 auto;
-    gap:0;
     overflow:hidden;
 }
 
@@ -59,7 +59,7 @@ body{
     grid-template-rows:1fr auto;
     justify-items:center;
     align-items:center;
-    padding:1rem 2.5rem 2rem 2.5rem;
+    padding:1rem 2.5rem 2rem;
     min-height:0;
 }
 
@@ -75,8 +75,9 @@ body{
 /* BOTÓN / NOMBRE */
 .name-link{
     display:block;
-    width:min(38vw, 620px);
-    margin-top:1rem;
+    width:min(25vw, 500px); /* más pequeño */
+    margin-top:1.2rem;
+    padding-bottom: 1rem;
 }
 
 .name{
@@ -84,6 +85,11 @@ body{
     height:auto;
     display:block;
     cursor:pointer;
+    transition:transform 0.25s ease;
+}
+
+.name:hover{
+    transform:scale(1.04);
 }
 
 /* SIDEBAR */
@@ -93,13 +99,11 @@ body{
     overflow-y:auto;
     overflow-x:hidden;
     padding:1.2rem 0.35rem 1.5rem;
-    
     display:grid;
     grid-auto-rows:max-content;
     justify-items:center;
     align-content:start;
     gap:1.6rem;
-    
     scrollbar-width:thin;
     scrollbar-color:#6a6d7a #2d2f3c;
 }
@@ -133,14 +137,15 @@ body{
     display:block;
     cursor:pointer;
     margin:0 auto;
+    transform-origin:center center;
     animation:appear 0.7s ease both;
+    transition:
+        transform 0.28s ease,
+        filter 0.28s ease,
+        opacity 0.28s ease;
 }
 
-.item:hover {
-    transform: scale(1.1);
-}
-
-/* ANIMACIÓN SIMPLE */
+/* ANIMACIÓN DE ENTRADA */
 @keyframes appear{
     from{
         opacity:0;
@@ -152,15 +157,26 @@ body{
     }
 }
 
-/* delay opcional para que entren uno a uno */
+/* DELAY PARA QUE ENTREN UNO A UNO */
 .item-link:nth-child(1) .item{ animation-delay:0.05s; }
 .item-link:nth-child(2) .item{ animation-delay:0.12s; }
 .item-link:nth-child(3) .item{ animation-delay:0.19s; }
 .item-link:nth-child(4) .item{ animation-delay:0.26s; }
 .item-link:nth-child(5) .item{ animation-delay:0.33s; }
 
+/* HOVER */
+.item-link:hover .item{
+    transform:translateY(-8px) scale(1.06);
+    filter:drop-shadow(0 12px 18px rgba(0,0,0,0.28)) brightness(1.04);
+}
+
+/* CLICK */
+.item-link:active .item{
+    transform:translateY(-2px) scale(0.98);
+}
+
 /* RESPONSIVE */
-@media (max-width: 900px){
+@media (max-width:900px){
     body{
         overflow:auto;
     }
