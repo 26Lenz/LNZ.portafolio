@@ -94,6 +94,22 @@ body{
     flex-shrink:0;
     background:#40434e;
 }
+.youtube-note{
+    font-size:1rem;
+    line-height:1.6;
+    margin-top:1rem;
+    color:#40434e;
+}
+
+.youtube-note a{
+    color:#40434e;
+    font-weight:700;
+    text-decoration:underline;
+}
+
+.youtube-note a:hover{
+    color:#48e7d2;
+}
 
 /* TEXTO INFERIOR */
 .description{
