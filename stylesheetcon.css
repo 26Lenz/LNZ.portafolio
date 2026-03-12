@@ -1,0 +1,141 @@
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html,
+body{
+  min-height:100%;
+}
+
+body{
+  background-color:#40434e;
+  background-image:url("IMGS/BGTile.gif");
+  background-repeat:repeat;
+  font-family:Arial, Helvetica, sans-serif;
+  color:#3c4150;
+  padding:1.5rem;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+/* HOME BUTTON */
+.back-button{
+  display:inline-block;
+  padding:0.9rem 1.4rem;
+  background:#49d8d0;
+  color:#2f3442;
+  text-decoration:none;
+  border-radius:999px;
+  font-weight:700;
+  font-size:1.2rem;
+  margin-bottom:1.2rem;
+  position:relative;
+  z-index:3;
+}
+
+.back-button:hover{
+  transform:scale(1.03);
+}
+
+/* MAIN LAYOUT */
+.contact-page{
+  width:min(96vw, 1450px);
+  min-height:calc(100vh - 110px);
+  margin:0 auto;
+  position:relative;
+
+  /* teléfono decorativo */
+  background-image:url("IMGS/Phonebuzz.gif");
+  background-repeat:no-repeat;
+  background-size:min(42vw, 620px);
+  background-position:left 6% center;
+}
+
+/* BURBUJA */
+.bubble-card{
+  background:#e3e4db;
+  border-radius:3.5rem;
+  padding:3.2rem 3rem;
+  min-height:560px;
+  width:min(42vw, 620px);
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  position:absolute;
+  right:4%;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+/* speech bubble tip */
+.bubble-card::before{
+  content:"";
+  position:absolute;
+  left:-70px;
+  top:110px;
+  width:0;
+  height:0;
+  border-top:55px solid transparent;
+  border-bottom:55px solid transparent;
+  border-right:95px solid #e3e4db;
+}
+
+/* TEXT */
+.bubble-card h2{
+  font-family:"Snell Roundhand", "Apple Chancery", cursive;
+  font-size:clamp(2.6rem, 4vw, 4.8rem);
+  font-weight:400;
+  line-height:1;
+  margin-bottom:2rem;
+}
+
+.bubble-card p{
+  font-size:clamp(1.15rem, 1.5vw, 1.8rem);
+  margin-bottom:1.4rem;
+  line-height:1.25;
+}
+
+.bubble-card h3{
+  font-family:"Snell Roundhand", "Apple Chancery", cursive;
+  font-size:clamp(2rem, 3vw, 3.6rem);
+  font-weight:400;
+  line-height:1;
+  margin-top:2rem;
+}
+
+/* TABLET / MOBILE */
+@media (max-width: 950px){
+  .contact-page{
+    min-height:auto;
+    padding-top:220px;
+    padding-bottom:2rem;
+
+    background-size:min(46vw, 260px);
+    background-position:left 1rem top 1rem;
+  }
+
+  .bubble-card{
+    position:relative;
+    right:auto;
+    top:auto;
+    transform:none;
+    width:min(92vw, 650px);
+    margin:0 auto;
+    min-height:auto;
+    padding:2rem 1.5rem;
+    border-radius:2.5rem;
+  }
+
+  .bubble-card::before{
+    left:40px;
+    top:-50px;
+    border-left:40px solid transparent;
+    border-right:40px solid transparent;
+    border-bottom:60px solid #e3e4db;
+    border-top:0;
+  }
+}
